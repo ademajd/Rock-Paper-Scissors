@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-image: url(img/cool-background.png);
+    background-color: #cccccc;
+  }
+
+
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    gap: 60px;
+  }
+
+  .game-winner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .winner {
+    font-size: 42px;
+    height: 200px;
+    width: 200px;
+    border-radius: 0.8rem;
+    border: 3px solid #aeec1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
