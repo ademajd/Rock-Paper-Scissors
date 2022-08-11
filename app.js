@@ -75,12 +75,21 @@ function playGame(playerInput) {
 function playFiveRound() {
     let pcWins = 0;
     let playerWins = 0;
+    let pcWon = false;
+    let PlayerWon = false;
 
     gameMoves.forEach(element => {
         element.addEventListener("click",() => {
-            if (winner.childNodes.length != 0) {
-                gameWinner.removeChild(winner);
-            }
+
+            console.log("-------------");
+            // if (pcWon|| PlayerWon) {
+            //     gameWinner.textContent = "";
+            //     pcWon = false;
+            //     PlayerWon = false;
+            // }
+            // console.log();
+            // console.log("-------------");
+
             let roundResult = playGame(element.id);
             console.log("-----------------------");
             if (roundResult == "You Win") {
@@ -89,15 +98,21 @@ function playFiveRound() {
                 pcWins++;
             }
             
+            console.log(pcWins, playerWins);
             if (pcWins == 5) {
                 winner.textContent = "pcWins";
+                pcWon = true;
                 pcWins = 0;
+                playerWins = 0;
                 return;
             } else if (playerWins == 5) {
                 winner.textContent = "playerWins";
                 playerWins = 0;
+                pcWins = 0;
+                PlayerWon = false;
                 return;
             }
+            
             
         })
     
